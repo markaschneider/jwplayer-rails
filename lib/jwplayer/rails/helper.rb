@@ -9,6 +9,11 @@ module JWPlayer::Rails
     # Includes JWPlayer javascript library
     def jwplayer_assets
       javascript_include_tag "jwplayer", "jwplayer.html5"
+    end
+
+    # Includes JWPlayer license
+    def jwplayer_license(options = {})
+      options = DEFAULT_OPTIONS.merge(options)
       javascript_tag "jwplayer.key='#{options[:license]}';"
     end
 
@@ -17,7 +22,7 @@ module JWPlayer::Rails
 
       result = %Q{<div id='#{options[:id]}'></div>
                   <script type='text/javascript'>
-                    jwplayer('#{options[:id]}').setup(#{options.except(:id,:license).to_json});
+                    jwplayer('#{options[:id]}').setup(#{options.except(:id).to_json});
                   </script>
                   }
 
