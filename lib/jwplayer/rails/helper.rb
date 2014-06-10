@@ -16,7 +16,7 @@ module JWPlayer::Rails
 
       result = %Q{<div id='#{options[:id]}'>This div will be replaced by the JW Player.</div>
                   <script type='text/javascript'>
-                    jwplayer('#{options[:id]}').setup(#{options.except(:id).to_json});
+                    jwplayer('#{options[:id]}').setup(#{options.except(:id,:license).to_json});
                   </script>
                   <script type="text/javascript">jwplayer.key="#{options[:license]}";</script>
                   }
