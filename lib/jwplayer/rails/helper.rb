@@ -3,7 +3,7 @@ module JWPlayer::Rails
     DEFAULT_OPTIONS = {
       id: 'jwplayer',
       flashplayer: '/assets/flash.swf',
-      licence: 'your-licence-key-here'
+      license: 'your-licence-key-here'
     }
 
     # Includes JWPlayer javascript library
