@@ -6,11 +6,7 @@ JW Player for Rails. Current version of JW Player is 6.2.3115
 
 Add this line to your application's Gemfile:
 
-    gem 'jwplayer-rails'
-
-Or install it yourself as:
-
-    $ gem install jwplayer-rails
+    gem 'jwplayer-rails', git: "git://github.com/heijmerikx/jwplayer-rails.git"
 
 ## Usage
 
