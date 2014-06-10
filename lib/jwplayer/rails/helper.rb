@@ -14,11 +14,11 @@ module JWPlayer::Rails
     def jwplayer(options = {})
       options = DEFAULT_OPTIONS.merge(options)
 
-      result = %Q{<div id='#{options[:id]}'>This div will be replaced by the JW Player.</div>
+      result = %Q{<div id='#{options[:id]}'></div>
                   <script type='text/javascript'>
                     jwplayer('#{options[:id]}').setup(#{options.except(:id,:license).to_json});
                   </script>
-                  <script type="text/javascript">jwplayer.key="#{options[:license]}";</script>
+                  <script type="text/javascript">jwplayer.key='#{options[:license]}';</script>
                   }
 
       result.respond_to?(:html_safe) ? result.html_safe : result
