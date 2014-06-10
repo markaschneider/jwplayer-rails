@@ -2,7 +2,8 @@ module JWPlayer::Rails
   module Helper
     DEFAULT_OPTIONS = {
       id: 'jwplayer',
-      flashplayer: '/assets/flash.swf'
+      flashplayer: '/assets/flash.swf',
+      licence: 'your-licence-key-here'
     }
 
     # Includes JWPlayer javascript library
@@ -16,7 +17,9 @@ module JWPlayer::Rails
       result = %Q{<div id='#{options[:id]}'>This div will be replaced by the JW Player.</div>
                   <script type='text/javascript'>
                     jwplayer('#{options[:id]}').setup(#{options.except(:id).to_json});
-                  </script>}
+                  </script>
+                  <script type="text/javascript">jwplayer.key="#{options[:license]}";</script>
+                  }
 
       result.respond_to?(:html_safe) ? result.html_safe : result
     end
