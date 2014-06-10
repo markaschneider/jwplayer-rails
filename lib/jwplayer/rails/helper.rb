@@ -8,7 +8,7 @@ module JWPlayer::Rails
 
     # Includes JWPlayer javascript library
     def jwplayer_assets
-      javascript_include_tag "jwplayer"
+      javascript_include_tag "jwplayer", "jwplayer.html5"
     end
 
     def jwplayer(options = {})
