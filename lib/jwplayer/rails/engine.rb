@@ -6,6 +6,7 @@ module JWPlayer::Rails
     initializer "precompile", :group => :all do |app|
       app.config.assets.precompile << "jwplayer.js"
       app.config.assets.precompile << "jwplayer.html5.js"
+      app.config.assets.precompile << "flash.swf"
     end
 
     initializer "helper" do |app|

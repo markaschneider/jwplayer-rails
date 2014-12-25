@@ -1,13 +1,19 @@
 module JWPlayer::Rails
   module Helper
-    DEFAULT_OPTIONS = {
-      id: 'jwplayer',
-      flashplayer: '/assets/flash.swf'
-    }
-
     LICENSE_OPTIONS = {
       license: 'your-licence-key-here'
     }
+
+    def default_options
+      {
+          id: 'jwplayer',
+          flashplayer: asset_path('flash.swf')
+      }
+    end
+
+    def swf_path
+      asset_path('flash.swf')
+    end
 
     # Includes JWPlayer javascript library
     def jwplayer_assets
@@ -21,7 +27,7 @@ module JWPlayer::Rails
     end
 
     def jwplayer(options = {})
-      options = DEFAULT_OPTIONS.merge(options)
+      options = default_options.merge(options)
 
       result = %Q{<div id='#{options[:id]}'></div>
                   <script type='text/javascript'>
