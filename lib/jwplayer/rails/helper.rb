@@ -7,12 +7,12 @@ module JWPlayer::Rails
     def default_options
       {
           id: 'jwplayer',
-          flashplayer: asset_path('flash.swf')
+          flashplayer: asset_path('jwplayer.flash.swf')
       }
     end
 
     def swf_path
-      asset_path('flash.swf')
+      asset_path('jwplayer.flash.swf')
     end
 
     # Includes JWPlayer javascript library
